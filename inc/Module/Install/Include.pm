@@ -1,26 +1,34 @@
-#line 1 "inc/Module/Install/Include.pm - /usr/local/lib/perl5/site_perl/5.8.1/Module/Install/Include.pm"
-# $File: //depot/cpan/Module-Install/lib/Module/Install/Include.pm $ $Author: autrijus $
-# $Revision: #7 $ $Change: 1375 $ $DateTime: 2003/03/18 12:29:32 $ vim: expandtab shiftwidth=4
-
+#line 1
 package Module::Install::Include;
-use Module::Install::Base; @ISA = qw(Module::Install::Base);
+
+use strict;
+use Module::Install::Base ();
+
+use vars qw{$VERSION @ISA $ISCORE};
+BEGIN {
+	$VERSION = '1.00';
+	@ISA     = 'Module::Install::Base';
+	$ISCORE  = 1;
+}
 
 sub include {
-    my ($self, $pattern) = @_;
-
-    foreach my $rv ( $self->admin->glob_in_inc($pattern) ) {
-        $self->admin->copy_package(@$rv);
-    }
-    return $file;
+	shift()->admin->include(@_);
 }
 
 sub include_deps {
-    my ($self, $pkg, $perl_version) = @_;
-    my $deps = $self->admin->scan_dependencies($pkg, $perl_version) or return;
+	shift()->admin->include_deps(@_);
+}
 
-    foreach my $key (sort keys %$deps) {
-        $self->include($key, $deps->{$key});
-    }
+sub auto_include {
+	shift()->admin->auto_include(@_);
+}
+
+sub auto_include_deps {
+	shift()->admin->auto_include_deps(@_);
+}
+
+sub auto_include_dependent_dists {
+	shift()->admin->auto_include_dependent_dists(@_);
 }
 
 1;

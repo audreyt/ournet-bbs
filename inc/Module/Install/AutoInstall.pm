@@ -1,9 +1,15 @@
-#line 1 "inc/Module/Install/AutoInstall.pm - /usr/local/lib/perl5/site_perl/5.8.1/Module/Install/AutoInstall.pm"
-# $File: //depot/cpan/Module-Install/lib/Module/Install/AutoInstall.pm $ $Author: autrijus $
-# $Revision: #12 $ $Change: 1481 $ $DateTime: 2003/05/07 10:41:22 $ vim: expandtab shiftwidth=4
-
+#line 1
 package Module::Install::AutoInstall;
-use Module::Install::Base; @ISA = qw(Module::Install::Base);
+
+use strict;
+use Module::Install::Base ();
+
+use vars qw{$VERSION @ISA $ISCORE};
+BEGIN {
+	$VERSION = '1.00';
+	@ISA     = 'Module::Install::Base';
+	$ISCORE  = 1;
+}
 
 sub AutoInstall { $_[0] }
 
@@ -21,41 +27,56 @@ sub auto_install {
     my $self = shift;
     return if $self->{done}++;
 
-# ExtUtils::AutoInstall Bootstrap Code, version 7.
-AUTO:{my$p='ExtUtils::AutoInstall';my$v=0.49;$p->VERSION||0>=$v
-or+eval"use $p $v;1"or+do{my$e=$ENV{PERL_EXTUTILS_AUTOINSTALL};
-(!defined($e)||$e!~m/--(?:default|skip|testonly)/and-t STDIN or
-eval"use ExtUtils::MakeMaker;WriteMakefile(PREREQ_PM=>{'$p',$v}
-);1"and exit)and print"==> $p $v required. Install it from CP".
-"AN? [Y/n] "and<STDIN>!~/^n/i and print"*** Installing $p\n"and
-do{if (eval '$>' and lc(`sudo -V`) =~ /version/){system('sudo',
-$^X,"-MCPANPLUS","-e","CPANPLUS::install $p");eval"use $p $v;1"
-||system('sudo', $^X, "-MCPAN", "-e", "CPAN::install $p")}eval{
-require CPANPLUS;CPANPLUS::install$p};eval"use $p $v;1"or eval{
-require CPAN;CPAN::install$p};eval"use $p $v;1"||die"*** Please
-manually install $p $v from cpan.org first...\n"}}}
-
     # Flatten array of arrays into a single array
     my @core = map @$_, map @$_, grep ref,
                $self->build_requires, $self->requires;
 
-    ExtUtils::AutoInstall->import(
-        (@core ? (-core => \@core) : ()), @_, $self->features
+    my @config = @_;
+
+    # We'll need Module::AutoInstall
+    $self->include('Module::AutoInstall');
+    require Module::AutoInstall;
+
+    my @features_require = Module::AutoInstall->import(
+        (@config ? (-config => \@config) : ()),
+        (@core   ? (-core   => \@core)   : ()),
+        $self->features,
     );
 
-    $self->makemaker_args( ExtUtils::AutoInstall::_make_args() );
+    my %seen;
+    my @requires = map @$_, map @$_, grep ref, $self->requires;
+    while (my ($mod, $ver) = splice(@requires, 0, 2)) {
+        $seen{$mod}{$ver}++;
+    }
+    my @build_requires = map @$_, map @$_, grep ref, $self->build_requires;
+    while (my ($mod, $ver) = splice(@build_requires, 0, 2)) {
+        $seen{$mod}{$ver}++;
+    }
+    my @configure_requires = map @$_, map @$_, grep ref, $self->configure_requires;
+    while (my ($mod, $ver) = splice(@configure_requires, 0, 2)) {
+        $seen{$mod}{$ver}++;
+    }
+
+    my @deduped;
+    while (my ($mod, $ver) = splice(@features_require, 0, 2)) {
+        push @deduped, $mod => $ver unless $seen{$mod}{$ver}++;
+    }
+
+    $self->requires(@deduped);
+
+    $self->makemaker_args( Module::AutoInstall::_make_args() );
 
     my $class = ref($self);
     $self->postamble(
         "# --- $class section:\n" .
-        ExtUtils::AutoInstall::postamble()
+        Module::AutoInstall::postamble()
     );
 }
 
 sub auto_install_now {
     my $self = shift;
-    $self->auto_install;
-    ExtUtils::AutoInstall::do_install();
+    $self->auto_install(@_);
+    Module::AutoInstall::do_install();
 }
 
 1;

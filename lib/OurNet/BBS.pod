@@ -1,14 +1,11 @@
-# $File: //depot/libOurNet/BBS/lib/OurNet/BBS.pod $ $Author: autrijus $
-# $Revision: #3 $ $Change: 8637 $ $DateTime: 2003/10/30 11:42:45 $
-
 =head1 NAME
 
 OurNet::BBS - Component Object Model for BBS systems
 
 =head1 VERSION
 
-This document describes version 1.66 of OurNet::BBS, released
-October 30, 2003.
+This document describes version 1.67 of OurNet::BBS, released
+November 11, 2010.
 
 =head1 SYNOPSIS
 
@@ -55,6 +52,9 @@ October 30, 2003.
 
 =head1 DESCRIPTION
 
+(Currently, this project exists mainly for historical/archival
+purposes, not for active development.)
+
 OurNet-BBS is a cross-protocol distributed network, built as an
 abstraction layer over telnet BBS-based systems used in Hong Kong,
 China and Taiwan. It implements a flexible object model for
@@ -65,10 +65,6 @@ This project aims to become a I<protocol agnostic> middle-ware
 solution for identity-based information storage & retrieval,
 much like the Project Jabber's goal toward instant messaging,
 or Project JXTA's aim toward distributed services.
-
-If you are new to the telnet-bbs platform, please download a
-copy of Melix BBS software (in English, Traditional Chinese
-and Simplified Chinese) at L<http://melix.elixus.org/>.
 
 For some of its practical uses, search for B<OurNet::BBSApp>
 on CPAN, and the sample scripts in the F<eg/> directory in this
@@ -87,19 +83,16 @@ model.
 L<OurNet::BBS::Roadmap> for the design goals, components, and related
 discussions.
 
-L<http://melix.elixus.org/> for development news, new releases, and
-binary distributions.
-
 =head1 AUTHORS
 
 Chia-Liang Kao E<lt>clkao@clkao.orgE<gt>,
-Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>
+Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
 
 =head1 COPYRIGHT
 
-Copyright 2001, 2002, 2003 by
+Copyright 2001-2010 by
 Chia-Liang Kao E<lt>clkao@clkao.orgE<gt>,
-Autrijus Tang E<lt>autrijus@autrijus.orgE<gt>.
+Audrey Tang E<lt>cpan@audreyt.orgE<gt>.
 
 This program is free software; you can redistribute it and/or 
 modify it under the same terms as Perl itself.

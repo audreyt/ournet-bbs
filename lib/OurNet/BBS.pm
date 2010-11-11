@@ -1,11 +1,9 @@
-# $File: //depot/libOurNet/BBS/lib/OurNet/BBS.pm $ $Author: autrijus $
-# $Revision: #8 $ $Change: 8638 $ $DateTime: 2003/10/30 11:58:54 $
 # See BBS.pod for documentations.
 
 package OurNet::BBS;
 use 5.006001;
 
-our $VERSION = 1.66;
+our $VERSION = 1.67;
 our $Encoding = '';
 our $CurrentUser = '';
 

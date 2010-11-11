@@ -1,8 +1,11 @@
 #!/usr/bin/perl
-# $File: //depot/libOurNet/BBS/Makefile.PL $ $Author: autrijus $
-# $Revision: #7 $ $Change: 8637 $ $DateTime: 2003/10/30 11:42:45 $
 
 use 5.006001;
+BEGIN {
+    if ($] >= 5.010) {
+        die "Perls since v5.10.0 too modern--this is $^V, stopped"
+    }
+}
 use inc::Module::Install;
 
 use strict;
@@ -41,7 +44,7 @@ build_requires( 'Test::More'	=> '0.31' );
 
 features(
     'OurNet Server (bbscomd)'	=> [
-	-tests   		=> [ <t/*-OurNet-*.t> ],
+#	-tests   		=> [ <t/*-OurNet-*.t> ],
 	recommends(
 	    'Storable'		=> '1.011',
 	    'Net::Daemon'	=> '0.13',
@@ -73,7 +76,7 @@ features(
     ],
     'Mailbox File (MailBox)'	=> [
 	-default 		=> 0,
-	-tests   		=> [ 't/6-MailBox.t' ],
+#	-tests   		=> [ 't/6-MailBox.t' ],
 	recommends(
 	    'Mail::Internet'	=> '1.0',
 	    'MIME::Tools'	=> '5.0',
@@ -82,7 +85,7 @@ features(
 	),
     ],
     'Telnet BBS (BBSAgent)'	=> [
-	-tests   		=> [ 't/5-BBSAgent.t' ],
+#	-tests   		=> [ 't/5-BBSAgent.t' ],
 	recommends(
 	    'Net::Telnet'	=> '3.02',
 	    'OurNet::BBSAgent'	=> '1.55',
@@ -90,23 +93,11 @@ features(
     ],
 );
 
-WriteMakefile(
-    AUTHOR          => 'Autrijus Tang (autrijus@autrijus.org)',
-    ABSTRACT        => 'Component Object Model for BBS systems',
-    NAME            => 'OurNet::BBS',
-    VERSION_FROM    => 'lib/OurNet/BBS.pm',
-    DISTNAME        => 'OurNet-BBS',
-    BINARY_LOCATION => 'x86/OurNet-BBS.tar.gz',
-    EXE_FILES       => [ <script/*> ],
+name 'OurNet-BBS';
+all_from 'lib/OurNet/BBS.pm';
+readme_from 'lib/OurNet/BBS.pm';
+install_script glob('script/*');
 
-    dist            => {
-        COMPRESS    => 'gzip',
-        SUFFIX      => '.gz',
-    }
-);
-
-sign(1);
-check_nmake();
-include('ExtUtils::AutoInstall');
+sign;
 auto_install();
-
+WriteAll();
