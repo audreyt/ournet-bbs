@@ -3,7 +3,7 @@
 use 5.006001;
 BEGIN {
     if ($] >= 5.010) {
-        die "Perls since v5.10.0 too modern--this is $^V, stopped"
+#        die "Perls since v5.10.0 too modern--this is $^V, stopped"
     }
 }
 use inc::Module::Install;
@@ -95,7 +95,7 @@ features(
 
 name 'OurNet-BBS';
 all_from 'lib/OurNet/BBS.pm';
-readme_from 'lib/OurNet/BBS.pm';
+readme_from 'lib/OurNet/BBS.pod';
 install_script glob('script/*');
 
 sign;
