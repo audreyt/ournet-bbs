@@ -1,0 +1,312 @@
+____________________________________________________________________________
+[  8637] By: autrijus                              on 2003/10/30  11:42:45
+        Log: * This be 1.66.
+             * Update dependency on IlyaZ's new if.pm.
+	   ! Makefile.PL inc/ExtUtils/AutoInstall.pm
+	   ! lib/OurNet/BBS.pod
+____________________________________________________________________________
+[  6076] By: autrijus                              on 2003/05/25  10:43:25
+        Log: * manifest.
+	   ! MANIFEST
+____________________________________________________________________________
+[  6074] By: autrijus                              on 2003/05/25  09:17:33
+        Log: * This be OurNet::BBS, 1.65.
+	   ! ChangeLog Makefile.PL README lib/OurNet/BBS.pm
+	   ! lib/OurNet/BBS.pod
+____________________________________________________________________________
+[  5039] By: autrijus                              on 2003/03/30  15:34:38
+        Log: * turns out it needs binmode.
+	   ! lib/OurNet/BBS/MELIX/Article.pm
+____________________________________________________________________________
+[  5038] By: autrijus                              on 2003/03/30  15:21:21
+        Log: * graceful decoding as requested by honeypie.
+	   ! lib/OurNet/BBS/MELIX/Article.pm
+____________________________________________________________________________
+[  4823] By: autrijus                              on 2003/03/19  19:35:32
+        Log: * another try.
+	   ! lib/OurNet/BBS/MAPLE2/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+____________________________________________________________________________
+[  4822] By: autrijus                              on 2003/03/19  19:24:22
+        Log: * a dir of '/' is not better than nothing.
+	   ! lib/OurNet/BBS/MAPLE2/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+____________________________________________________________________________
+[  4820] By: autrijus                              on 2003/03/19  18:51:58
+        Log: * fix archive problem reported by honeypie.
+	   ! lib/OurNet/BBS/MAPLE2/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+____________________________________________________________________________
+[  4602] By: clkao                                 on 2003/03/05  12:55:04
+        Log: obiwan bug in maple3::user creation
+	   ! lib/OurNet/BBS/MAPLE3/User.pm
+____________________________________________________________________________
+[  4012] By: autrijus                              on 2003/01/29  11:06:24
+        Log: * refactor open.pm and open() to consistently avoid
+	       binmode()
+             and adopt 2-arg open.
+	   ! lib/OurNet/BBS/CVIC/Group.pm
+	   ! lib/OurNet/BBS/CVIC/GroupGroup.pm
+	   ! lib/OurNet/BBS/MAPLE2/Article.pm
+	   ! lib/OurNet/BBS/MAPLE2/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE2/Board.pm
+	   ! lib/OurNet/BBS/MAPLE2/BoardGroup.pm
+	   ! lib/OurNet/BBS/MAPLE2/User.pm
+	   ! lib/OurNet/BBS/MAPLE2/UserGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/User.pm
+	   ! lib/OurNet/BBS/MAPLE3/UserGroup.pm
+	   ! lib/OurNet/BBS/MELIX/Group.pm
+	   ! lib/OurNet/BBS/ScalarFile.pm
+____________________________________________________________________________
+[  3978] By: autrijus                              on 2003/01/28  12:07:29
+        Log: * omg.
+	   ! lib/OurNet/BBS/OurNet/BBS.pm
+____________________________________________________________________________
+[  3972] By: autrijus                              on 2003/01/28  11:41:10
+        Log: * do not autovivify group members.
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3970] By: autrijus                              on 2003/01/28  11:29:20
+        Log: * revert to the old groups behaviour.
+	   ! lib/OurNet/BBS/MELIX/Group.pm
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3967] By: autrijus                              on 2003/01/28  10:32:09
+        Log: * implement dynamic toplevel as required by m543.
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3960] By: autrijus                              on 2003/01/28  03:06:18
+        Log: * revert back to 1.64 behaviour.
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3958] By: autrijus                              on 2003/01/28  02:21:52
+        Log: * ournet protocol back to work
+	   ! lib/OurNet/BBS/Client.pm
+____________________________________________________________________________
+[  3957] By: autrijus                              on 2003/01/28  02:17:08
+        Log: * let require() not die horribly on OurNet::BBS::Client.
+	   ! lib/OurNet/BBS/Client.pm
+____________________________________________________________________________
+[  3956] By: autrijus                              on 2003/01/28  02:16:54
+        Log: * fix group encodings.
+	   ! lib/OurNet/BBS/MELIX/Group.pm
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3858] By: autrijus                              on 2003/01/26  07:18:45
+        Log: * correct authen.
+	   ! lib/OurNet/BBS.pm lib/OurNet/BBS/OurNet/BBS.pm
+____________________________________________________________________________
+[  3857] By: autrijus                              on 2003/01/26  07:17:02
+        Log: * renewed files
+	   ! MANIFEST TODO t/stdtests
+____________________________________________________________________________
+[  3852] By: autrijus                              on 2003/01/25  22:39:28
+        Log: * a first cut at connection-less authen.
+	   ! lib/OurNet/BBS/OurNet/BBS.pm
+	   ! lib/OurNet/BBS/Server.pm
+____________________________________________________________________________
+[  3851] By: autrijus                              on 2003/01/25  20:03:38
+        Log: * that will require the lexwrap module
+	   ! Makefile.PL
+____________________________________________________________________________
+[  3850] By: autrijus                              on 2003/01/25  20:03:29
+        Log: * a draft of on-disk authen.
+	   ! lib/OurNet/BBS/Base.pm
+	   ! lib/OurNet/BBS/OurNet/BBS.pm
+____________________________________________________________________________
+[  3849] By: autrijus                              on 2003/01/25  19:36:01
+        Log: * more cleanup
+	   ! lib/OurNet/BBS/Authen.pm
+	   ! lib/OurNet/BBS/Server.pm
+____________________________________________________________________________
+[  3848] By: autrijus                              on 2003/01/25  19:19:48
+        Log: * fold-friendly view.
+	   ! lib/OurNet/BBS/Client.pm
+____________________________________________________________________________
+[  3844] By: autrijus                              on 2003/01/25  18:08:48
+        Log: * unicodification of User.
+	   ! lib/OurNet/BBS/Base.pm
+	   ! lib/OurNet/BBS/MAPLE3/User.pm
+____________________________________________________________________________
+[  3819] By: autrijus                              on 2003/01/25  08:54:33
+        Log: * now pack(), too.
+	   ! lib/OurNet/BBS/Base.pm
+____________________________________________________________________________
+[  3815] By: autrijus                              on 2003/01/25  00:54:33
+        Log: * actually no utf8ize is needed; we only need encoding on
+             the source stream, no need to impose them on STDIN and
+	     STDOUT.
+	   ! lib/OurNet/BBS/Cola/Article.pm
+	   ! lib/OurNet/BBS/Firebird3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE2/Article.pm
+	   ! lib/OurNet/BBS/MAPLE3/Article.pm
+____________________________________________________________________________
+[  3814] By: autrijus                              on 2003/01/25  00:45:49
+        Log: * because modperl can't accept 'use encoding' we
+	       temporarily utf8ize them.
+	   ! lib/OurNet/BBS/Cola/Article.pm
+	   ! lib/OurNet/BBS/Firebird3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE2/Article.pm
+	   ! lib/OurNet/BBS/MAPLE3/Article.pm
+	   ! lib/OurNet/BBS/Utils.pm
+____________________________________________________________________________
+[  3810] By: autrijus                              on 2003/01/24  23:41:28
+        Log: * unicodification continues -- but we don't want to use
+	       utf8 hash key -- oh god.
+	   ! lib/OurNet/BBS/Base.pm
+	   ! lib/OurNet/BBS/MAPLE2/Board.pm
+	   ! lib/OurNet/BBS/MAPLE2/BoardGroup.pm
+____________________________________________________________________________
+[  3809] By: autrijus                              on 2003/01/24  23:22:29
+        Log: * intercepting unpack.
+	   ! lib/OurNet/BBS/Base.pm
+	   ! lib/OurNet/BBS/MAPLE2/Board.pm
+	   ! lib/OurNet/BBS/MAPLE2/BoardGroup.pm
+____________________________________________________________________________
+[  3808] By: autrijus                              on 2003/01/24  23:17:35
+        Log: * the hard part of unicodification begins.
+	   ! lib/OurNet/BBS/Base.pm
+	   ! lib/OurNet/BBS/MAPLE2/Board.pm
+	   ! lib/OurNet/BBS/MAPLE2/BoardGroup.pm
+____________________________________________________________________________
+[  3807] By: autrijus                              on 2003/01/24  22:48:36
+        Log: * passes regression with "use OurNet::BBS 'big5'"!
+	   ! Makefile.PL lib/OurNet/BBS.pm
+	   ! lib/OurNet/BBS/BBSAgent/Article.pm
+	   ! lib/OurNet/BBS/BBSAgent/ArticleGroup.pm
+	   ! lib/OurNet/BBS/CVIC/Group.pm
+	   ! lib/OurNet/BBS/CVIC/GroupGroup.pm
+	   ! lib/OurNet/BBS/Cola/Article.pm
+	   ! lib/OurNet/BBS/External/ArticleGroup.pm
+	   ! lib/OurNet/BBS/Firebird3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE2/Article.pm
+	   ! lib/OurNet/BBS/MAPLE2/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE2/Board.pm
+	   ! lib/OurNet/BBS/MAPLE2/BoardGroup.pm
+	   ! lib/OurNet/BBS/MAPLE2/User.pm
+	   ! lib/OurNet/BBS/MAPLE2/UserGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[  3805] By: autrijus                              on 2003/01/24  22:04:07
+        Log: * if.pm.
+	   ! Makefile.PL
+____________________________________________________________________________
+[  3804] By: autrijus                              on 2003/01/24  22:04:01
+        Log: * use OurNet::BBS 'big5' now turns on utf8 mode.
+	   ! lib/OurNet/BBS.pm
+____________________________________________________________________________
+[  3803] By: autrijus                              on 2003/01/24  22:02:43
+        Log: * $OurNet::BBS::Encoding now sets global encoding.
+	   ! eg/boardidx lib/OurNet/BBS.pm
+	   ! lib/OurNet/BBS/MAPLE3/Article.pm
+	   ! lib/OurNet/BBS/MAPLE3/ArticleGroup.pm
+	   ! lib/OurNet/BBS/MAPLE3/User.pm
+	   ! lib/OurNet/BBS/MAPLE3/UserGroup.pm
+	   ! lib/OurNet/BBS/MELIX/Article.pm
+	   ! lib/OurNet/BBS/MELIX/Group.pm
+	   ! lib/OurNet/BBS/MELIX/GroupGroup.pm
+	   ! lib/OurNet/BBS/ScalarFile.pm
+____________________________________________________________________________
+[  3793] By: autrijus                              on 2003/01/24  19:40:04
+        Log: * some more modernization.
+	   ! t/--signature.t t/0-Base.t
+____________________________________________________________________________
+[  3792] By: autrijus                              on 2003/01/24  19:34:06
+        Log: * we use pseudohash proudly!
+	   ! (edit 111 files)
+____________________________________________________________________________
+[  3791] By: autrijus                              on 2003/01/24  19:19:23
+        Log: * modern release engineering
+	  +> ChangeLog inc/ExtUtils/AutoInstall.pm
+	  +> t/--signature.t
+	   - HISTORY
+	   ! Makefile.PL
+____________________________________________________________________________
+[  3790] By: autrijus                              on 2003/01/24  19:08:46
+        Log: * more modern practice.
+	  +> script/bbsboard script/bbscomd script/bbsmail
+	   - bin/bbsboard bin/bbscomd bin/bbsmail
+	   ! MANIFEST
+____________________________________________________________________________
+[  3789] By: autrijus                              on 2003/01/24  19:07:35
+        Log: * change to the modern practice of lib/.
+	  +> (branch 114 files)
+	   - (delete 114 files)
+	   ! MANIFEST
+____________________________________________________________________________
+[  3742] By: autrijus                              on 2003/01/21  22:08:26
+        Log: * put perlio where it belong.
+	   ! BBS/Base.pm BBS/MELIX/Article.pm
+____________________________________________________________________________
+[  3741] By: autrijus                              on 2003/01/21  21:41:40
+        Log: * use a nice global layer instead.
+	   ! BBS/MELIX/Article.pm
+____________________________________________________________________________
+[  3740] By: autrijus                              on 2003/01/21  21:35:39
+        Log: * add experimental encoding layer.
+	   ! BBS/MELIX/Article.pm
+____________________________________________________________________________
+[   859] By: autrijus                              on 2002/09/06  10:08:57
+        Log: * correct clobbering errors thanks to perlopentut.
+	   ! BBS/Base.pm
+____________________________________________________________________________
+[   858] By: autrijus                              on 2002/09/06  09:41:57
+        Log: * first working locking implementation.
+	   ! BBS/Base.pm BBS/CVIC/GroupGroup.pm
+	   ! BBS/MAPLE2/Article.pm BBS/MAPLE2/Board.pm
+	   ! BBS/MAPLE3/Article.pm
+	   ! BBS/MAPLE3/ArticleGroup.pm BBS/MELIX/Group.pm
+____________________________________________________________________________
+[   856] By: autrijus                              on 2002/09/05  21:28:07
+        Log: * lockers.
+	   ! BBS/Base.pm
+____________________________________________________________________________
+[   850] By: autrijus                              on 2002/09/05  01:30:46
+        Log: * retracted the last submit; flock should be built into
+	       open()
+	   ! BBS/MAPLE2/Article.pm
+	   ! BBS/MAPLE2/ArticleGroup.pm BBS/MAPLE2/Board.pm
+	   ! BBS/MAPLE2/User.pm BBS/MAPLE3/Article.pm
+	   ! BBS/MAPLE3/ArticleGroup.pm
+	   ! BBS/MELIX/Article.pm
+____________________________________________________________________________
+[   849] By: autrijus                              on 2002/09/05  01:28:58
+        Log: * refactored commits to commit().
+	   ! BBS/MAPLE2/Article.pm
+	   ! BBS/MAPLE2/ArticleGroup.pm BBS/MAPLE2/Board.pm
+	   ! BBS/MAPLE2/User.pm BBS/MAPLE3/Article.pm
+	   ! BBS/MAPLE3/ArticleGroup.pm
+	   ! BBS/MELIX/Article.pm
+____________________________________________________________________________
+[   764] By: autrijus                              on 2002/08/23  12:07:00
+        Log: * style cleanup.
+	   ! BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[   763] By: autrijus                              on 2002/08/23  12:06:49
+        Log: * remedied the incapability of ->delete MELIX groups.
+	   ! BBS/MAPLE2/Board.pm BBS/MELIX/Group.pm
+____________________________________________________________________________
+[   577] By: clkao                                 on 2002/08/05  16:26:18
+        Log: edge condition fixes for userid len = 12
+	   ! BBS/MAPLE3/User.pm BBS/MAPLE3/UserGroup.pm
+____________________________________________________________________________
+[   576] By: clkao                                 on 2002/08/05  16:24:42
+        Log: * user home should be all lc'ed.
+             * avoid being refreshed when doing EXISTS for users.
+	   ! BBS/MAPLE3/UserGroup.pm
+____________________________________________________________________________
+[   321] By: autrijus                              on 2002/07/03  07:48:53
+        Log: * reported by mezl: Cola does not implement usershmkey.
+	   ! BBS/Cola/BBS.pm
+____________________________________________________________________________
+[    13] By: clkao                                 on 2002/06/13  00:52:01
+        Log: workaround group access thru ournet
+	   ! BBS/MELIX/GroupGroup.pm
+____________________________________________________________________________
+[    12] By: clkao                                 on 2002/06/12  23:27:09
+        Log: better access model for MELIX::Group
+	   ! BBS/MELIX/Group.pm BBS/MELIX/GroupGroup.pm
