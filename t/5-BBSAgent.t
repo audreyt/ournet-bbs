@@ -16,7 +16,7 @@ BEGIN {
     } reverse @INC;
 }
 
-use Test::More tests => keys(%sites) * 2;
+use Test::More (%sites ? (tests => keys(%sites) * 2) : skip_all => 'OurNet::BBSAgent not available');
 
 # Load BBS
 use OurNet::BBS;
