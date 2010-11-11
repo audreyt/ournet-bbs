@@ -2,8 +2,8 @@
 
 use 5.006001;
 BEGIN {
-    if ($] >= 5.010) {
-#        die "Perls since v5.10.0 too modern--this is $^V, stopped"
+    if ($] >= 5.010 and not $ENV{FORCE_MAKEFILE}) {
+        die "Perls since v5.10.0 too modern--this is $^V, stopped"
     }
 }
 use inc::Module::Install;
